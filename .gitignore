@@ -1,0 +1,7 @@
+/build
+/test
+*.bin
+*.asc
+*.dblite
+*.o
+*.exe
