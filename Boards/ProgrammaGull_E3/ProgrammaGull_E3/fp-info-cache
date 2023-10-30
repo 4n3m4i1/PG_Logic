@@ -1,4 +1,4 @@
-22228255248378018
+22229950392659017
 ADS8584SIPM
 BNC_THT
 
@@ -81612,6 +81612,13 @@ PGL_Castle_Pin
 0
 1
 1
+ProgrammaGull_Logic
+TDFN-16-1EP_3x2_mm
+https://www.analog.com/media/en/package-pcb-resources/package/pkg_pdf/tdfn/21-100030.pdf
+
+0
+17
+17
 RF
 Skyworks_SKY13575_639LF
 http://www.skyworksinc.com/uploads/documents/SKY13575_639LF_203270D.pdf
