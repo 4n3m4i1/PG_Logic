@@ -6,3 +6,5 @@
 *.o
 *.exe
 *.zip
+/output
+/fab_output
