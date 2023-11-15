@@ -8,3 +8,8 @@
 *.zip
 /output
 /fab_output
+*.lck
+*.~lock
+*.odt
+*.odt#
+*.csv#
