@@ -11446,7 +11446,7 @@
   (gr_text "iCE40-UP5k SG-48" (at 104.8 50.7 90) (layer "B.SilkS") (tstamp 54283534-dc9b-44d4-b1b0-cac7cd7afbf0)
     (effects (font (size 1.5 1.5) (thickness 0.3) bold) (justify left bottom mirror))
   )
-  (gr_text "Version: Alpha 0.1" (at 95 75.45) (layer "B.SilkS") (tstamp f6d0d772-92da-4c06-b354-d773bbd0f8d8)
+  (gr_text "Version: Alpha 0.2" (at 95 75.45) (layer "B.SilkS") (tstamp f6d0d772-92da-4c06-b354-d773bbd0f8d8)
     (effects (font (size 2 2) (thickness 0.3) bold) (justify left bottom mirror))
   )
   (gr_text "[ ] 500ksps\n[ ] 1MSPS" (at 88.45 70.45) (layer "F.SilkS") (tstamp 0caec656-15aa-4d30-b4d9-03610f8fd5d9)
