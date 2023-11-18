@@ -22,3 +22,6 @@ This open source assembly of tools greatly simplifies lint, build, and upload on
 and is highly recommended for introductory users (and advanced users as well.. it's very practical!)  
   
 Standard icestick workflows may also be supported, though this has yet to be seen.
+  
+## Errata
+- First run of boards had reversed LEDs on FT2232HQ, this has been fixed in schematic and PCB
