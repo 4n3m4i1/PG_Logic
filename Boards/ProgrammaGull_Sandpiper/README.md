@@ -19,3 +19,7 @@ v. Alpha
 - Consolidate BOM (3x HCS595, discrete PNP and NPN driver for 7 seg)
   
 ## Errata
+v. Alpha
+- First board run has reversed UART TX/RX LED orientation (Fixed in KiCad files)
+- First board run 7 segment common anode driver transistor bases leak through 74HCS596 input protection diode, all segments are always on.
+
