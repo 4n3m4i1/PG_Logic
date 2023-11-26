@@ -21,5 +21,5 @@ v. Alpha
 ## Errata
 v. Alpha
 - First board run has reversed UART TX/RX LED orientation (Fixed in KiCad files)
-- First board run 7 segment common anode driver transistor bases leak through 74HCS596 input protection diode, all segments are always on.
+- First board run 7 segment common anode driver transistor bases leak through 74HCS596 input protection diode, all digits are always on.
 
