@@ -18,14 +18,14 @@ set_io -nowarn UI_DPAD_R	    43  #
 set_io -nowarn UI_DPAD_D	    42  #
 set_io -nowarn UI_DPAD_U	    38  #
                                     #
-set_io -nowarn UI_SW7		    25  # All Switch Positions:
-set_io -nowarn UI_SW6		    26  #   UP = HIGH, DOWN = LOW
-set_io -nowarn UI_SW5		    27  #
-set_io -nowarn UI_SW4		    28  #
-set_io -nowarn UI_SW3		    31  #
-set_io -nowarn UI_SW2		    32  #
-set_io -nowarn UI_SW1		    34  #
-set_io -nowarn UI_SW0		    35  #
+set_io -nowarn UI_SW[7]		    25  # All Switch Positions:
+set_io -nowarn UI_SW[6]		    26  #   UP = HIGH, DOWN = LOW
+set_io -nowarn UI_SW[5]		    27  #
+set_io -nowarn UI_SW[4]		    28  #
+set_io -nowarn UI_SW[3]		    31  #
+set_io -nowarn UI_SW[2]		    32  #
+set_io -nowarn UI_SW[1]		    34  #
+set_io -nowarn UI_SW[0]		    35  #
 #####################################
 
 #####################################

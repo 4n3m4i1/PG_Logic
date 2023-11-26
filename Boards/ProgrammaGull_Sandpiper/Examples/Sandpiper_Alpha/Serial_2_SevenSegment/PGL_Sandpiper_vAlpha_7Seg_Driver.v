@@ -48,7 +48,8 @@
     This cycle repeats without end, until enable is 0.
 */
 
-
+// Disabled PWM output
+//`define DEBUG_BRIGHTNESS
 
 module PGL_Sandpiper_vAlpha_7Seg_Driver
 #(
@@ -201,7 +202,7 @@ module PGL_Sandpiper_vAlpha_7Seg_Driver
                     if(char_time_ctr == SEG_TIME_CYC) begin // Light up next char
                         // We can count on rollover since the idx is a power of 2 here
                         //dout_shift_reg  <= {c_anode_sel,display_buffer[idx]};
-                        dout_shift_reg  <= {8'h00,display_buffer[idx]};
+                        dout_shift_reg  <= {8'h01,8'b10000000};
                         dout_shift_ctr  <= 0;
                         char_time_ctr   <= 0;
                         shift_state     <= SHIFT;
@@ -255,6 +256,10 @@ module PGL_Sandpiper_vAlpha_7Seg_Driver
 
     // Generate Dimming PWM on ~OE
     always @ (posedge sys_clk) begin
+    `ifdef DEBUG_BRIGHTNESS
+        if(en)  OUTPUT_ENABLE   <= OUTPUT_ON;
+        else    OUTPUT_ENABLE   <= OUTPUT_OFF;
+    `else
         if(en && RCLK) begin
             /*
             if(pwm_ctr == brightness_tgt) OUTPUT_ENABLE <= OUTPUT_OFF;
@@ -270,6 +275,7 @@ module PGL_Sandpiper_vAlpha_7Seg_Driver
             OUTPUT_ENABLE   <= OUTPUT_OFF;
             pwm_ctr         <= 0;
         end
+    `endif
     end
 endmodule
 

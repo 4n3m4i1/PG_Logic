@@ -19,6 +19,11 @@ module top
     input   UART_RX,
     output  UART_TX,
     */
+
+    // Switches
+    /*
+    input [7:0] SW,
+    */
 );
 
     /*

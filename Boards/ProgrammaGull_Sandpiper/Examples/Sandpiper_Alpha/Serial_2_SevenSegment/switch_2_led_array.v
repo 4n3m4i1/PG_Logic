@@ -36,9 +36,9 @@ module sw2ledarray
 
     reg [1:0] oa_state;
     localparam IDLE     = 2'h0;
-    localparam SHIFT_H  = 2'h1;
-    localparam SHIFT_L  = 2'h2;
-    localparam DONE     = 2'h3;
+    localparam DOUT     = 2'h1;
+    localparam SHIFT_H  = 2'h2;
+    localparam SHIFT_L  = 2'h3;
 
     
 
@@ -61,15 +61,19 @@ module sw2ledarray
         case (oa_state)
             IDLE: begin
                 if(!led_refresh_ctr) begin
-                    oa_state        <= SHIFT_H;
+                    oa_state        <= DOUT;
                     shifto          <= data;
                     led_clk         <= 1'b0;
                     led_shift_ctr   <= 0;
                     shift_ctr       <= 0;
                 end
             end
-            SHIFT_H: begin
+            DOUT: begin
                 led_do      <= shifto[0];
+                oa_state    <= SHIFT_H;
+            end
+            SHIFT_H: begin
+                
                 shifto      <= shifto >> 1;
                 shift_ctr   <= shift_ctr + 1;
                 led_clk     <= 1'b1;
@@ -79,16 +83,13 @@ module sw2ledarray
                 led_shift_ctr <= led_shift_ctr + 1;
                 if(led_shift_ctr == (SHIFT_TIME_CYC / 2)) led_clk <= 1'b0;
                 if(led_shift_ctr == SHIFT_TIME_CYC) begin
-                    if(shift_ctr < (LED_CT + 2)) oa_state  <= SHIFT_H;
+                    if(shift_ctr < (LED_CT + 1)) oa_state  <= DOUT;
                     else begin
                         oa_state        <= IDLE;
                         shift_ctr       <= 0;
                     end
                     led_shift_ctr       <= 0;
                 end
-            end
-            DONE: begin
-
             end
         endcase
     end
