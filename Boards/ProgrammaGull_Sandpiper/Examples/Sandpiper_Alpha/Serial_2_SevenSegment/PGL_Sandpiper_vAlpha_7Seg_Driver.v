@@ -201,8 +201,8 @@ module PGL_Sandpiper_vAlpha_7Seg_Driver
                     
                     if(char_time_ctr == SEG_TIME_CYC) begin // Light up next char
                         // We can count on rollover since the idx is a power of 2 here
-                        //dout_shift_reg  <= {c_anode_sel,display_buffer[idx]};
-                        dout_shift_reg  <= {8'h01,8'b10000000};
+                        dout_shift_reg  <= {c_anode_sel,display_buffer[idx]};
+                        //dout_shift_reg  <= {8'h01,8'b10000000};
                         dout_shift_ctr  <= 0;
                         char_time_ctr   <= 0;
                         shift_state     <= SHIFT;
