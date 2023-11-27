@@ -10,38 +10,43 @@
 module top
 (
     // External Clock
-    
     input CLK_12MHZ,
     
     
     // UART Interface
-    
     input           UART_RX,
     output wire     UART_TX,
     
-
+    // DPAD Buttons
     input           UI_DPAD_L,
     input           UI_DPAD_R,
     input           UI_DPAD_U,
     input           UI_DPAD_D,
 
+    // User Button
     input           UI_AUX_BUTTON,
 
+    // User Switches
     input           [7:0] UI_SW,
+    
+    // RGB LED (On high current driver)
     output          UI_RGBLED_R,
-    //output          UI_RGBLED_G,
+    output          UI_RGBLED_G,
     output          UI_RGBLED_B,
 
+    // 7 Segment Shift Register
     output          UI_7SEGSR_CLK,
     output          UI_7SEGSR_RCLK,
     output          UI_7SEGSR_DIN,
     output          UI_7SEGSR_OE,
 
+    // User LED Array Shift Register
     output          UI_ULEDSR_DIN,
     output          UI_ULEDSR_CLK
 );
 
     /*
+    // Internal +/- 10% oscillator
     wire HF_CLK;
     SB_HFOSC internal_HF_osc
     (
@@ -55,6 +60,10 @@ module top
     // 0b11 = 6  MHz
     defparam internal_HF_osc.CLKHF_DIV = "0b00";
     */
+
+    assign UI_RGBLED_R = ~UI_DPAD_L;
+    assign UI_RGBLED_G = ~UI_DPAD_R;
+    assign UI_RGBLED_B = ~UI_DPAD_D;
 
 /*
 module sw2ledarray
@@ -150,8 +159,6 @@ module uart_2_segment
 );
 */
     wire update_screen;
-    assign UI_RGBLED_R = ~update_screen;
-    assign UI_RGBLED_B = ~ua0_rx_rdy;
     wire [7:0] segments;
 
     // ASCII -> 7 Segment conversion
@@ -191,7 +198,7 @@ module uart_2_segment
     reg [7:0] bright;
     reg [2:0] charsel;
 
-    // Broken display driver :(
+    // Will drive every segment on first run Alpha 0.1 boards
     PGL_Sandpiper_vAlpha_7Seg_Driver 
     #(
         .DISPLAY_HZ(200),
