@@ -9,6 +9,7 @@
 *.hex
 /output
 /fab_output
+/tmp
 *.lck
 *.~lock
 *.odt
