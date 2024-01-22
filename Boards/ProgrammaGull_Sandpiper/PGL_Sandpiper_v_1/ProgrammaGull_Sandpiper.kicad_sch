@@ -7045,7 +7045,7 @@
     (stroke (width 0) (type default))
     (uuid f8aa02eb-d376-4b9f-93af-0a3f80d0a992)
   )
-  (wire (pts (xy 647.7 265.43) (xy 648.97 265.43))
+  (wire (pts (xy 645.16 265.43) (xy 648.97 265.43))
     (stroke (width 0) (type default))
     (uuid f8be22fd-2af1-403b-be22-2ef10659835a)
   )
