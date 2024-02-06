@@ -10,21 +10,23 @@
 module top
 (
     // External Clock
-    /*
-    input CLK_12MHZ
-    */
+    
+    input CLK_12MHZ,
+    
     
     // UART Interface
-    /*
+    
     input   UART_RX,
-    output  UART_TX,
-    */
+    output  UART_TX
+    
 
     // Switches
     /*
     input [7:0] SW,
     */
 );
+
+    assign UART_TX = UART_RX;
 
     /*
     wire HF_CLK;

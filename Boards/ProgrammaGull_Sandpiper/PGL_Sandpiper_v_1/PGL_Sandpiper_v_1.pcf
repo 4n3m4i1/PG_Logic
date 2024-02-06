@@ -11,21 +11,20 @@ set_io -nowarn UART_TX		    18  # Data being sent FROM the iCE40 to FTDI
 
 #####################################
 # Bank 0: User Input, Bank 0, 3V3   #
-set_io -nowarn UI_AUX_BUTTON	23  # All Button Positions:
-                                    #   NO = Low, MOM = HIGH
-set_io -nowarn UI_DPAD_L	    36  # 
-set_io -nowarn UI_DPAD_R	    43  #
-set_io -nowarn UI_DPAD_D	    42  #
-set_io -nowarn UI_DPAD_U	    38  #
+set_io -nowarn UI_ENC_BUTTON	27  #
+set_io -nowarn UI_ENC_A	        25  #
+set_io -nowarn UI_ENC_B     	26  #
+                                    #   
+set_io -nowarn UI_DPAD_L	    35  # All Button Positions:
+set_io -nowarn UI_DPAD_R	    43  #   NO = Low, MOM = HIGH
+set_io -nowarn UI_DPAD_D	    36  #
+set_io -nowarn UI_DPAD_U	    42  #
+set_io -nowarn UI_DPAD_C	    38  #
                                     #
-set_io -nowarn UI_SW7		    25  # All Switch Positions:
-set_io -nowarn UI_SW6		    26  #   UP = HIGH, DOWN = LOW
-set_io -nowarn UI_SW5		    27  #
-set_io -nowarn UI_SW4		    28  #
-set_io -nowarn UI_SW3		    31  #
-set_io -nowarn UI_SW2		    32  #
-set_io -nowarn UI_SW1		    34  #
-set_io -nowarn UI_SW0		    35  #
+set_io -nowarn UI_SW_D		    32  # All Switch Positions:
+set_io -nowarn UI_SW_CLKEN		31  #   UP = HIGH, DOWN = LOW
+set_io -nowarn UI_SW_ULED_CLK   28  #   Switches are shifted in!
+set_io -nowarn UI_SW_SH_LD      34  #
 #####################################
 
 #####################################
@@ -43,11 +42,11 @@ set_io -nowarn UI_7SEGSR_OE	    10  # LOW = Output Enabled, HIGH = Disabled
 
 #####################################
 # 8 LED Array                       #
-# Note: To fully commit a frame to  #
-#       output an extra clock pulse #
-#       is required due to RCLK and #
-#       CLK being tied together.    #
-set_io -nowarn UI_ULEDSR_CLK	21  #
+# Note:                             #
+#   Shift register clock shared     #
+#   with UI_SW shift register       #
+#                                   #
+set_io -nowarn UI_ULEDSR_OE	    21  #
 set_io -nowarn UI_ULEDSR_DIN	20  #
 #####################################
 
@@ -68,10 +67,10 @@ set_io -nowarn UI_ADC_DO	    46  #
 #####################################
 # PMOD 0, Bank 2, 3V3               # 
 #   1x6 pin Version                 #
-set_io -nowarn UI_PMOD0_0	    48  #
-set_io -nowarn UI_PMOD0_1	    2   #
-set_io -nowarn UI_PMOD0_2	    3   #
-set_io -nowarn UI_PMOD0_3	    4   #
+set_io -nowarn UI_PMOD0_0	    4   #
+set_io -nowarn UI_PMOD0_1	    3   #
+set_io -nowarn UI_PMOD0_2	    2   #
+set_io -nowarn UI_PMOD0_3	    48  #
 #####################################
 
 #####################################
