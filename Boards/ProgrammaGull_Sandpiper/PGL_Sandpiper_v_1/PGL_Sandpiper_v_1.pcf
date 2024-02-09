@@ -11,11 +11,11 @@ set_io -nowarn UART_TX		    18  # Data being sent FROM the iCE40 to FTDI
 
 #####################################
 # Bank 0: User Input, Bank 0, 3V3   #
-set_io -nowarn UI_ENC_BUTTON	27  #
-set_io -nowarn UI_ENC_A	        25  #
-set_io -nowarn UI_ENC_B     	26  #
+set_io -nowarn UI_ENC_BUTTON	27  # Encoder Button is:
+set_io -nowarn UI_ENC_A	        25  #   LOW when unpressed
+set_io -nowarn UI_ENC_B     	26  #   HIGH when pressed
                                     #   
-set_io -nowarn UI_DPAD_L	    35  # All Button Positions:
+set_io -nowarn UI_DPAD_L	    35  # All DPAD Button Positions:
 set_io -nowarn UI_DPAD_R	    43  #   NO = Low, MOM = HIGH
 set_io -nowarn UI_DPAD_D	    36  #
 set_io -nowarn UI_DPAD_U	    42  #
