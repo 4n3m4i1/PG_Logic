@@ -1,0 +1,82 @@
+#####################################
+# Flash and FTDI Interface 0        #
+set_io -nowarn FLASH_SCK	    15  #
+set_io -nowarn FLASH_CSN	    16	# Drive high if not connected to flash.
+set_io -nowarn FLASH_MISO	    17	# May need to flip MISO/MOSI perspectives
+set_io -nowarn FLASH_MOSI	    14  #
+                                    #
+set_io -nowarn UART_RX		    19  # Data being sent FROM the FTDI to iCE40
+set_io -nowarn UART_TX		    18  # Data being sent FROM the iCE40 to FTDI
+#####################################
+
+#####################################
+# Bank 0: User Input, Bank 0, 3V3   #
+set_io -nowarn UI_ENC_BUTTON	27  # Encoder Button is:
+set_io -nowarn UI_ENC_A	        25  #   LOW when unpressed
+set_io -nowarn UI_ENC_B     	26  #   HIGH when pressed
+                                    #   
+set_io -nowarn UI_DPAD_L	    35  # All DPAD Button Positions:
+set_io -nowarn UI_DPAD_R	    43  #   NO = Low, MOM = HIGH
+set_io -nowarn UI_DPAD_D	    36  #
+set_io -nowarn UI_DPAD_U	    42  #
+set_io -nowarn UI_DPAD_C	    38  #
+                                    #
+set_io -nowarn UI_SW_D		    32  # All Switch Positions:
+set_io -nowarn UI_SW_CLKEN		31  #   UP = HIGH, DOWN = LOW
+set_io -nowarn UI_SW_ULED_CLK   28  #   Switches are shifted in!
+set_io -nowarn UI_SW_SH_LD      34  #
+#####################################
+
+#####################################
+# External Clock, Bank 0, 3V3       #
+set_io -nowarn CLK_12MHZ	    37  # Ties directly into Global Buffer 1
+#####################################
+
+#####################################
+# 7 Segment Display, Common Anode   # 
+set_io -nowarn UI_7SEGSR_CLK	13  #
+set_io -nowarn UI_7SEGSR_RCLK	12  #
+set_io -nowarn UI_7SEGSR_DIN	11  #
+set_io -nowarn UI_7SEGSR_OE	    10  # LOW = Output Enabled, HIGH = Disabled
+#####################################
+
+#####################################
+# 8 LED Array                       #
+# Note:                             #
+#   Shift register clock shared     #
+#   with UI_SW shift register       #
+#                                   #
+set_io -nowarn UI_ULEDSR_OE	    21  #
+set_io -nowarn UI_ULEDSR_DIN	20  #
+#####################################
+
+#####################################
+# GPIO, Bank 1, 3V3                 #
+set_io -nowarn UI_GPIO_0	    6   # Low Pass Alias on board for PDM
+set_io -nowarn UI_GPIO_1	    9   # ^
+#####################################
+
+#####################################
+# ADC SPI Interface, Bank 2, 3V3    #
+set_io -nowarn UI_ADC_CSN	    44  #
+set_io -nowarn UI_ADC_SCK	    45  #
+set_io -nowarn UI_ADC_DI	    47  #
+set_io -nowarn UI_ADC_DO	    46  #
+#####################################
+
+#####################################
+# PMOD 0, Bank 2, 3V3               # 
+#   1x6 pin Version                 #
+set_io -nowarn UI_PMOD0_0	    4   #
+set_io -nowarn UI_PMOD0_1	    3   #
+set_io -nowarn UI_PMOD0_2	    2   #
+set_io -nowarn UI_PMOD0_3	    48  #
+#####################################
+
+#####################################
+# Common Anode RGB LED              #
+# Wired to Lattice RGB LED Driver   #
+set_io -nowarn UI_RGBLED_R	    41  #
+set_io -nowarn UI_RGBLED_G	    39  #
+set_io -nowarn UI_RGBLED_B	    40  #
+#####################################
