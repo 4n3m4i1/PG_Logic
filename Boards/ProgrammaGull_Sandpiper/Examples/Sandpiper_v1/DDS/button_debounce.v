@@ -5,14 +5,14 @@
 module button_debouncer
 #(
     parameter SYSCLK_FREQ = 12000000,
-    parameter DEBOUNCE_DELAY = 150          // ms
+    parameter DEBOUNCE_DELAY = 0.150          // ms
 )(
     input       clk,
     input       D,
     output reg  Q
 );
 
-    localparam DELAY_CYCLES_DB  =  $rtoi($floor(SYSCLK_FREQ * (DEBOUNCE_DELAY / 1000.0)));
+    localparam DELAY_CYCLES_DB  =  $rtoi($floor(SYSCLK_FREQ * (DEBOUNCE_DELAY)));
     localparam DELAY_CT_BITS    =  $clog2(DELAY_CYCLES_DB);
 
     reg [(DELAY_CT_BITS - 1):0] delay_ctr;
